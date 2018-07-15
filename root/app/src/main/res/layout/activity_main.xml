@@ -152,16 +152,40 @@
             </android.support.design.widget.TextInputLayout>
 
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
-                android:focusable="true"
+
+
+            <LinearLayout
                 android:layout_marginTop="24dip"
-                android:src="@drawable/ic_next"
-                android:onClick="doLogin"
-                android:layout_marginBottom="9dip"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:focusable="true"
+                    android:src="@drawable/ic_next"
+                    android:onClick="doLogin"
+                    android:layout_marginBottom="9dip"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/report"
+                    android:focusable="true"
+                    android:layout_marginStart="24dip"
+                    android:src="@drawable/ic_report"
+                    android:onClick="doLogin"
+                    android:layout_marginBottom="9dip"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
 
