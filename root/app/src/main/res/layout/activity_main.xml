@@ -162,6 +162,19 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+<Button
+                android:id="@+id/missing"
+                android:focusable="true"
+                android:layout_marginTop="24dip"
+                android:src="@drawable/ic_next"
+                android:onClick="missingChild"
+                android:layout_marginBottom="9dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+    android:text="Missing Child?"
+                />
         </LinearLayout>
 
 

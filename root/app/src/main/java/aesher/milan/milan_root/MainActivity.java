@@ -1,5 +1,6 @@
 package aesher.milan.milan_root;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -90,6 +91,11 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    public void missingChild(View view){
+        Intent intent = new Intent(MainActivity.this, MissingChild.class);
+        startActivity(intent);
+
+    }
 
     private void createDatabaseEntryForOfficer(String reference){
         DatabaseReference mDatabaseReference = FirebaseDatabase.getInstance().getReference(reference + "/" + mAuth.getUid());
