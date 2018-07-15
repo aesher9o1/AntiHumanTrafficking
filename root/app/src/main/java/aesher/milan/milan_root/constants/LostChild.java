@@ -2,19 +2,46 @@ package aesher.milan.milan_root.constants;
 
 public class LostChild {
 
-    private String name, description , contact, pictureUrl;
+    private String firstName,lastName,age, height, weight,id1, id2, description , contact, pictureUrl;
 
     LostChild(){}
 
-    public LostChild(String name, String description, String contact, String pictureUrl){
-        this.name = name;
+    public LostChild(String firstName,String lastName,String age,String height, String weight,
+                     String id1,String id2, String description, String contact, String pictureUrl){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.id1 = id1;
+        this.id2 = id2;
         this.description = description;
         this.contact =contact;
         this.pictureUrl = pictureUrl;
     }
 
     public String getName() {
-        return name;
+        return firstName+" "+lastName;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getId1() {
+        return id1;
+    }
+
+    public String getId2() {
+        return id2;
+    }
+
+    public String getWeight() {
+        return weight;
     }
 
     public String getDescription() {
