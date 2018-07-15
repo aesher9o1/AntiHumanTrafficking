@@ -3,6 +3,7 @@ package aesher.milan.milan_root;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,10 @@ public class MainActivity extends BaseActivity {
     TextView privilege;
 
 
+    public void goToReport(){
+        startActivity(new Intent(MainActivity.this,MissingChild.class));
+    }
+
     private FirebaseAuth mAuth;
 
 
@@ -55,6 +60,7 @@ public class MainActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         mAuth = FirebaseAuth.getInstance();
+
     }
 
 
@@ -62,7 +68,6 @@ public class MainActivity extends BaseActivity {
 
     public void doLogin(View v){
         if(!password.getText().toString().isEmpty()&&!userName.getText().toString().isEmpty()){
-
                 mAuth.createUserWithEmailAndPassword(userName.getText().toString(),password.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -87,8 +92,8 @@ public class MainActivity extends BaseActivity {
                             }
                         });
 
-
         }
+
     }
 
     public void missingChild(View view){

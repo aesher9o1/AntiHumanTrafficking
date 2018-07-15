@@ -22,6 +22,7 @@ import com.google.firebase.storage.*;
 import java.io.IOException;
 import java.util.UUID;
 
+
 import aesher.milan.milan_root.constants.BaseActivity;
 
 public class MissingChild extends BaseActivity {
@@ -32,13 +33,22 @@ public class MissingChild extends BaseActivity {
     FirebaseStorage storage;
     StorageReference storageReference;
 
+
     private final int PICK_IMAGE_REQUEST = 71;
+
+
+    Uri imageUri;
+    String locationImage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
+        goFullScreen();
         setContentView(R.layout.activity_missing_child);
+
         btnChoose = (Button) findViewById(R.id.btnChoose);
         btnUpload = (Button) findViewById(R.id.btnUpload);
         imageView = (ImageView) findViewById(R.id.imgView);
