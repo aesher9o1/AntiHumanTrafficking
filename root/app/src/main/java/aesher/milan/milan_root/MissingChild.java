@@ -34,6 +34,7 @@ public class MissingChild extends BaseActivity {
     private int detailCheck = 0;
     private Uri filePath;
     long time;
+    private LostChild lostChild;
     FirebaseStorage storage;
     StorageReference storageReference;
     String downloadUrl = new String();
@@ -127,29 +128,29 @@ public class MissingChild extends BaseActivity {
 
     public void registerComplaint(View view){
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        EditText firstName = findViewById(R.id.first_name);
-        EditText lastName = findViewById(R.id.last_name);
-        EditText age = findViewById(R.id.age);
-        EditText complexion = findViewById(R.id.complexion);
-        EditText id1 = findViewById(R.id.id1);
-        EditText id2 = findViewById(R.id.id2);
-        EditText height = findViewById(R.id.height);
-        EditText weight = findViewById(R.id.weight);
-        EditText extra = findViewById(R.id.extraDetails);
-        EditText contact = findViewById(R.id.contact);
-        EditText incharge = findViewById(R.id.incharge);
+        final EditText firstName = findViewById(R.id.first_name);
+        final EditText lastName = findViewById(R.id.last_name);
+        final EditText age = findViewById(R.id.age);
+        final EditText complexion = findViewById(R.id.complexion);
+        final EditText id1 = findViewById(R.id.id1);
+        final EditText id2 = findViewById(R.id.id2);
+        final EditText height = findViewById(R.id.height);
+        final EditText weight = findViewById(R.id.weight);
+        final EditText extra = findViewById(R.id.extraDetails);
+        final EditText contact = findViewById(R.id.contact);
+        final EditText incharge = findViewById(R.id.incharge);
 
-        String first_name = firstName.getText().toString();
-        String last_name = lastName.getText().toString();
-        String age_string = age.getText().toString();
-        String complexion_string = complexion.getText().toString();
-        String id1_string = id1.getText().toString();
-        String id2_string = id2.getText().toString();
-        String height_string = height.getText().toString();
-        String weight_string = weight.getText().toString();
-        String extra_string = extra.getText().toString();
-        String contact_string = contact.getText().toString();
-        String incharge_string = incharge.getText().toString();
+        final String first_name = firstName.getText().toString();
+        final String last_name = lastName.getText().toString();
+        final String age_string = age.getText().toString();
+        final String complexion_string = complexion.getText().toString();
+        final String id1_string = id1.getText().toString();
+        final String id2_string = id2.getText().toString();
+        final String height_string = height.getText().toString();
+        final String weight_string = weight.getText().toString();
+        final String extra_string = extra.getText().toString();
+        final String contact_string = contact.getText().toString();
+        final String incharge_string = incharge.getText().toString();
 
         if(first_name.isEmpty()){
             Toast.makeText(MissingChild.this,"enter first name",Toast.LENGTH_SHORT).show();
@@ -178,6 +179,7 @@ public class MissingChild extends BaseActivity {
         }
         else {
 
+
             try {
                 storageReference.child("images/" + Long.toString(time)).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -186,6 +188,28 @@ public class MissingChild extends BaseActivity {
 
                         downloadUrl = uri.toString();
                         Toast.makeText(MissingChild.this, "URL Saved", Toast.LENGTH_SHORT).show();
+                        if(downloadUrl.isEmpty()){
+                            Toast.makeText(MissingChild.this, "Please Press Again", Toast.LENGTH_SHORT).show();
+
+                        }
+                        else {
+                            lostChild = new LostChild(first_name, last_name, age_string, height_string, weight_string,
+                                    id1_string, id2_string, extra_string, contact_string, downloadUrl, complexion_string, incharge_string);
+
+                            mDatabase.child("complaints").child(Long.toString(time)).setValue(lostChild);
+                            Toast.makeText(MissingChild.this, "Complaint Registered", Toast.LENGTH_SHORT).show();
+                            firstName.setText("");
+                            lastName.setText("");
+                            age.setText("");
+                            complexion.setText("");
+                            id1.setText("");
+                            id2.setText("");
+                            height.setText("");
+                            weight.setText("");
+                            extra.setText("");
+                            contact.setText("");
+                            incharge.setText("");
+                        }
 /// The string(file link) that you need
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -194,28 +218,7 @@ public class MissingChild extends BaseActivity {
                         // Handle any errors
                     }
                 });
-                LostChild lostChild = new LostChild(first_name, last_name, age_string, height_string, weight_string,
-                        id1_string, id2_string, extra_string, contact_string, downloadUrl, complexion_string, incharge_string);
-                if(!downloadUrl.isEmpty()){
-                mDatabase.child("complaints").child(Long.toString(time)).setValue(lostChild);
-                Toast.makeText(MissingChild.this, "Complaint Registered", Toast.LENGTH_SHORT).show();
-                firstName.setText("");
-                lastName.setText("");
-                age.setText("");
-                complexion.setText("");
-                id1.setText("");
-                id2.setText("");
-                height.setText("");
-                weight.setText("");
-                extra.setText("");
-                contact.setText("");
-                incharge.setText("");
-                }
-                else
-                {
-                    Toast.makeText(MissingChild.this, "Photo URL Error, Try Pressing Again", Toast.LENGTH_SHORT).show();
 
-                }
 
 
             } catch (Exception exception) {
