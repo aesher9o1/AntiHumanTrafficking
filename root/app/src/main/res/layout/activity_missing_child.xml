@@ -94,11 +94,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,16 +117,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="First Name"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:id="@+id/first_name"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Last Name"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:id="@+id/last_name"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -137,17 +141,19 @@ android:textColor="@color/black" />
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/age"
                     android:hint="Age"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/complexion"
                     android:hint="Complexion"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -160,17 +166,19 @@ android:textColor="@color/black" />
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/height"
                     android:hint="Height"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Weight"
-                    android:textColorHint="@color/black"
-android:textColor="@color/black" />
+                    android:id="@+id/weight"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -183,31 +191,51 @@ android:textColor="@color/black" />
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/id1"
                     android:hint="Identification Mark 1"
-                    android:textColorHint="@color/black"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/id2"
                     android:hint="Identification Mark 2"
-                    android:textColorHint="@color/black"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
             </LinearLayout>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/extraDetails"
                 android:hint="Extra Description/Details"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contact"
+                android:hint="Contact Details"
+
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/incharge"
+                android:hint="Policeman Incharge"
+
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Register" />
-
+                android:text="Register"
+                android:onClick="registerComplaint"/>
 
 
         </LinearLayout>

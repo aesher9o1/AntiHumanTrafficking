@@ -2,12 +2,12 @@ package aesher.milan.milan_root.constants;
 
 public class LostChild {
 
-    private String firstName,lastName,age, height, weight,id1, id2, description , contact, pictureUrl;
+    private String firstName,lastName,age, height, weight,id1, id2, description , contact, pictureUrl, complexion, incharge;
 
-    LostChild(){}
+    LostChild(String first_name, String last_name){}
 
     public LostChild(String firstName,String lastName,String age,String height, String weight,
-                     String id1,String id2, String description, String contact, String pictureUrl){
+                     String id1,String id2, String description, String contact, String pictureUrl, String complexion, String incharge){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -18,10 +18,20 @@ public class LostChild {
         this.description = description;
         this.contact =contact;
         this.pictureUrl = pictureUrl;
+        this.complexion = complexion;
+        this.incharge = incharge;
+    }
+
+    public String getIncharge() {
+        return incharge;
     }
 
     public String getName() {
         return firstName+" "+lastName;
+    }
+
+    public String getComplexion() {
+        return complexion;
     }
 
     public String getAge() {
