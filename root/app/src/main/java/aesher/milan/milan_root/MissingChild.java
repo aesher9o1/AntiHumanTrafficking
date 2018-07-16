@@ -184,7 +184,9 @@ public class MissingChild extends BaseActivity {
                     public void onSuccess(Uri uri) {
                         // Got the download URL for 'users/me/profile.png'
 
-                        downloadUrl = uri.toString(); /// The string(file link) that you need
+                        downloadUrl = uri.toString();
+                        Toast.makeText(MissingChild.this, "URL Saved", Toast.LENGTH_SHORT).show();
+/// The string(file link) that you need
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -192,9 +194,9 @@ public class MissingChild extends BaseActivity {
                         // Handle any errors
                     }
                 });
-                Toast.makeText(MissingChild.this, "URL Saved", Toast.LENGTH_SHORT).show();
                 LostChild lostChild = new LostChild(first_name, last_name, age_string, height_string, weight_string,
                         id1_string, id2_string, extra_string, contact_string, downloadUrl, complexion_string, incharge_string);
+                if(!downloadUrl.isEmpty()){
                 mDatabase.child("complaints").child(Long.toString(time)).setValue(lostChild);
                 Toast.makeText(MissingChild.this, "Complaint Registered", Toast.LENGTH_SHORT).show();
                 firstName.setText("");
@@ -208,6 +210,12 @@ public class MissingChild extends BaseActivity {
                 extra.setText("");
                 contact.setText("");
                 incharge.setText("");
+                }
+                else
+                {
+                    Toast.makeText(MissingChild.this, "Photo URL Error, Try Pressing Again", Toast.LENGTH_SHORT).show();
+
+                }
 
 
             } catch (Exception exception) {
