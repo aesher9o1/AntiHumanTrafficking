@@ -19,13 +19,13 @@
 
     </group>
 
-    <item android:title="">
-        <menu>
-            <item
-                android:id="@+id/settings"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Settings" />
-        </menu>
-    </item>
+    <!--<item android:title="">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/settings"-->
+                <!--android:icon="@drawable/ic_menu_manage"-->
+                <!--android:title="Settings" />-->
+        <!--</menu>-->
+    <!--</item>-->
 
 </menu>
