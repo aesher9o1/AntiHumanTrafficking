@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "852874804612",
+    "firebase_url": "https://antihuman-3cdd4.firebaseio.com",
+    "project_id": "antihuman-3cdd4",
+    "storage_bucket": "antihuman-3cdd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852874804612:android:e285e7261ac2f417",
+        "android_client_info": {
+          "package_name": "aesher.milan.milan_root"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852874804612-mkr4btks5i0de3i5fnnlq6hhgkaf6eue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aesher.milan.milan_root",
+            "certificate_hash": "06d34e4a974106da2234daca7a6ccbd54934c099"
+          }
+        },
+        {
+          "client_id": "852874804612-7e9id1ds8pie3jjirrvag15tjdnvbrli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnd54Lw4gbw6OMGALAgX9mifcBvtO7488"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852874804612-7e9id1ds8pie3jjirrvag15tjdnvbrli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852874804612:android:052dceed518330eb",
+        "android_client_info": {
+          "package_name": "user.police.sadana.milan_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852874804612-7e9id1ds8pie3jjirrvag15tjdnvbrli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnd54Lw4gbw6OMGALAgX9mifcBvtO7488"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

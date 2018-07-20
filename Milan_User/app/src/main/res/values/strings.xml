@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Milan User</string>
+    <string name="welcome">Welcome</string>
+    <string name="setting">Setting</string>
+</resources>
