@@ -27,68 +27,38 @@ import java.util.UUID;
 
 import aesher.milan.milan_root.constants.BaseActivity;
 import aesher.milan.milan_root.constants.LostChild;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MissingChild extends BaseActivity {
-    private Button btnChoose, btnUpload;
+
+
+
     private ImageView imageView;
-    private int detailCheck = 0;
+
     private Uri filePath;
     long time;
     private LostChild lostChild;
     FirebaseStorage storage;
     StorageReference storageReference;
-    String downloadUrl = new String();
+    String downloadUrl ="";
     private DatabaseReference mDatabase;
 
 
     private final int PICK_IMAGE_REQUEST = 71;
 
 
-    Uri imageUri;
-    String locationImage;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-
-        super.onCreate(savedInstanceState);
-        goFullScreen();
-        setContentView(R.layout.activity_missing_child);
-
-        btnChoose = (Button) findViewById(R.id.btnChoose);
-        btnUpload = (Button) findViewById(R.id.btnUpload);
-        imageView = (ImageView) findViewById(R.id.imgView);
-
-        storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReference();
-
-
-
-        btnChoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chooseImage();
-            }
-        });
-
-        btnUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadImage();
-            }
-        });
-
-    }
-
-    private void chooseImage() {
+    @OnClick(R.id.btnChoose)
+        public void chooseImageForUpload(){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
-    private void uploadImage() {
 
+    @OnClick(R.id.btnUpload)
+        public void uploadImagetoDB(){
         if(filePath != null)
         {
             final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -126,8 +96,37 @@ public class MissingChild extends BaseActivity {
         }
     }
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+
+        super.onCreate(savedInstanceState);
+        goFullScreen();
+        setContentView(R.layout.activity_missing_child);
+
+        ButterKnife.bind(this);
+
+
+        imageView = findViewById(R.id.imgView);
+
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+
+
+        makeToast("Upload the image first to lodge the complaint");
+
+    }
+
+
+
+
+
+
+
     public void registerComplaint(View view){
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
         final EditText firstName = findViewById(R.id.first_name);
         final EditText lastName = findViewById(R.id.last_name);
         final EditText age = findViewById(R.id.age);
@@ -153,29 +152,22 @@ public class MissingChild extends BaseActivity {
         final String incharge_string = incharge.getText().toString();
 
         if(first_name.isEmpty()){
-            Toast.makeText(MissingChild.this,"enter first name",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter first name");
         }
         else if(age_string.isEmpty()){
-            Toast.makeText(MissingChild.this,"enter age, if not known add approximate",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter Approximate age");
         }
         else if (complexion_string.isEmpty()){
-            Toast.makeText(MissingChild.this,"enter complexion",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter complexion");
         }
         else if (height_string.isEmpty()){
-
-            Toast.makeText(MissingChild.this,"enter height",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter Height");
         }
         else if (contact_string.isEmpty()){
-            Toast.makeText(MissingChild.this,"enter Contact information",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter person to contact");
         }
         else if (incharge_string.isEmpty()){
-            Toast.makeText(MissingChild.this,"enter Policeman incharge",Toast.LENGTH_SHORT).show();
-
+            makeToast("Enter policeman incharge");
         }
         else {
 
@@ -210,7 +202,6 @@ public class MissingChild extends BaseActivity {
                             contact.setText("");
                             incharge.setText("");
                         }
-/// The string(file link) that you need
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -230,6 +221,7 @@ public class MissingChild extends BaseActivity {
 
 
     }
+
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

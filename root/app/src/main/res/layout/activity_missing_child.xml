@@ -24,9 +24,11 @@
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:textColor="@color/piltoverColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
             android:layout_marginTop="8dp"
             android:text="Upload Photograph"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/imgView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -39,7 +41,6 @@
             android:layout_height="200dp"
             android:layout_marginBottom="1dp"
             android:layout_marginTop="16dp"
-
             app:layout_constraintBottom_toTopOf="@+id/layout_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +86,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:text="Add Details"
-            android:textColor="@color/black"
+            android:textColor="@color/piltoverColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -144,7 +147,7 @@
                     android:id="@+id/age"
                     android:hint="Age"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
 
                 <EditText
                     android:layout_width="0dip"
@@ -153,7 +156,7 @@
                     android:id="@+id/complexion"
                     android:hint="Complexion"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
             </LinearLayout>
 
             <LinearLayout
@@ -169,7 +172,7 @@
                     android:id="@+id/height"
                     android:hint="Height"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
 
                 <EditText
                     android:layout_width="0dip"
@@ -178,7 +181,7 @@
                     android:hint="Weight"
                     android:id="@+id/weight"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
             </LinearLayout>
 
             <LinearLayout
@@ -194,7 +197,7 @@
                     android:id="@+id/id1"
                     android:hint="Identification Mark 1"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
 
                 <EditText
                     android:layout_width="0dip"
@@ -203,7 +206,7 @@
                     android:id="@+id/id2"
                     android:hint="Identification Mark 2"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/grey" />
             </LinearLayout>
 
             <EditText
@@ -212,15 +215,15 @@
                 android:id="@+id/extraDetails"
                 android:hint="Extra Description/Details"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/grey" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/contact"
                 android:hint="Contact Details"
-
+                android:inputType="number"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/grey" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -228,7 +231,7 @@
                 android:hint="Policeman Incharge"
 
                 android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/grey" />
 
             <Button
                 android:layout_width="wrap_content"
