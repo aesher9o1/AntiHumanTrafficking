@@ -7,4 +7,20 @@
     <color name="background">#0f1126</color>
     <color name="disabled">#b1b1b3</color>
     <color name="enabled">#fff</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="paleWhite">#FAFAFA</color>
+    <color name="black">#ff292929</color>
+    <color name="grey">#212121</color>
+    <color name="materialGreen">#96c93d</color>
+    <color name="materialRed">#ED4956</color>
+    <color name="piltoverColor">#ef8065</color>
+    <color name="materialBlue">#00ccff</color>
+
+
+    //card color
+    <color name ="redCard">#ff5252</color>
+    <color name = "yellowCard">#ffb74d</color>
+    <color name ="defaultCard">#ff424242</color>
+
 </resources>

@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import user.police.sadana.milan_user.Fragments.Complaint;
 import user.police.sadana.milan_user.Fragments.Home;
+import user.police.sadana.milan_user.Fragments.NoticeBoard;
 
 public class MainPager extends FragmentStatePagerAdapter {
 
@@ -19,8 +20,9 @@ public class MainPager extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int i) {
         switch (i){
-            case 0: new Home();
-            case 1: new Complaint();
+            case 0: return new Home();
+            case 1: return new Complaint();
+            case 2: return new NoticeBoard();
             default: return new Home();
         }
     }
