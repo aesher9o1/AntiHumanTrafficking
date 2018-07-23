@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.FirebaseApp;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import user.police.sadana.milan_user.Adapters.MainPager;
