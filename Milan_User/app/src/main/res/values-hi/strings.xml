@@ -3,4 +3,17 @@
     <string name="app_name">Milan User</string>
     <string name="welcome">स्वागत हे</string>
     <string name="setting">सेटिंग</string>
+
+
+
+    <!-- For the missing child -->
+    <string name="name">नाम :</string>
+    <string name="age">आयु :</string>
+    <string name="height">ऊंचाई :</string>
+    <string name="weight">वजन :</string>
+    <string name="description">भौतिक वर्णन :</string>
+    <string name="identification">पहचान चिन्ह :</string>
+    <string name="contact">संपर्क करें :</string>
+    <string name="incharge">प्रभारी अधिकारी :</string>
+
 </resources>

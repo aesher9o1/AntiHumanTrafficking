@@ -1,5 +1,6 @@
 package user.police.sadana.milan_user.Fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,6 +24,8 @@ import com.google.firebase.database.Query;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 import butterknife.ButterKnife;
 import user.police.sadana.milan_user.Constants.LostChild;
@@ -84,7 +88,42 @@ public class Home extends Fragment {
             holder.childImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(),"ban raha he",Toast.LENGTH_SHORT).show();
+                    LayoutInflater inflater = getLayoutInflater();
+                    View alertDialogue = inflater.inflate(R.layout.dialogue_child_info,null);
+                    AlertDialog dialog = new AlertDialog.Builder(getContext()).create();
+                    dialog.setView(alertDialogue);
+
+                    Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+
+
+                    ImageView childImage = alertDialogue.findViewById(R.id.child_image);
+                    Picasso.with(getContext()).load(model.getPictureUrl()).into(childImage);
+
+                    TextView name = alertDialogue.findViewById(R.id.name);
+                    name.setText(model.getName());
+
+                    TextView age = alertDialogue.findViewById(R.id.age);
+                    age.setText(model.getAge());
+
+                    TextView description = alertDialogue.findViewById(R.id.description);
+                    description.setText(model.getDescription());
+
+                    TextView height = alertDialogue.findViewById(R.id.height);
+                    height.setText(model.getHeight());
+
+                    TextView weight = alertDialogue.findViewById(R.id.weight);
+                    weight.setText(model.getWeight());
+
+                    TextView identification = alertDialogue.findViewById(R.id.identification);
+                    identification.setText(model.getId1()+" \n" + model.getId2());
+
+                    TextView contact = alertDialogue.findViewById(R.id.contact);
+                    contact.setText(model.getContact());
+
+                    TextView incharge = alertDialogue.findViewById(R.id.incharge);
+                    incharge.setText(model.getIncharge());
+
+                    dialog.show();
                 }
             });
             }

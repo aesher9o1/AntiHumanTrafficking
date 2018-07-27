@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    app:cardCornerRadius="13dip"
+    app:cardBackgroundColor="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dip"
+        android:orientation="vertical"
+        android:layout_marginTop="15dip"
+        android:paddingEnd="15dip"
+        android:layout_marginBottom="15dip"
+        android:gravity="center_horizontal">
+
+
+        <ImageView
+            android:id="@+id/child_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:baselineAligned="false"
+            android:layout_marginTop="12dip"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/name"
+                android:textSize="@dimen/childTextSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/age"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/height"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/weight"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/description"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/identification"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/contact"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/childTextSize"
+                android:text="@string/incharge"
+                android:layout_marginTop="@dimen/childDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   />
+
+                <TextView
+                    android:id="@+id/age"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/height"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/weight"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/identification"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/contact"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/incharge"
+                    android:textSize="@dimen/childTextSize"
+                    android:layout_marginTop="@dimen/childDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    </ScrollView>
+</android.support.v7.widget.CardView>
